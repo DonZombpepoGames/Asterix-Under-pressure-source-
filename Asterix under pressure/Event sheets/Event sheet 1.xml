@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="POTIONINGREDIENTS" sid="903746846837143" static="0" type="number">0</variable>
+        <event-block sid="852666611746083">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="327987787800254" type="System" />
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="264228411344774" type="System" />
+                <action id="6" name="Stop" sid="550174177007581" type="Audio">
+                    <param id="0" name="Tag">&quot;title&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="257654203274027" type="Audio">
+                    <param id="0" name="Audio file">y2mate.com - Asterix and The Power Of The Gods  Air On The G String</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;music1&quot;</param>
+                </action>
+                <action behavior="Physics" id="12" name="Set world gravity" sid="295591398247400" type="techoCayendo">
+                    <param id="0" name="Gravity">0.03</param>
+                </action>
+                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="219420859834980" type="techoCayendo">
+                    <param id="0" name="Object">SueloMazmorra</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="877097320688531" type="techoCayendo">
+                    <param id="0" name="Object">rampa</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action behavior="Physics" id="15" name="Set velocity" sid="755036113198207" type="techoCayendo">
+                    <param id="0" name="X component">3</param>
+                    <param id="1" name="Y component">3</param>
+                </action>
+                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="485441547756579" type="techoCayendo">
+                    <param id="0" name="Object">Sprite6</param>
+                    <param id="1" name="State">0</param>
+                </action>
+                <action behavior="Physics" id="23" name="Enable/disable collisions" sid="553710863810764" type="Sprite6">
+                    <param id="0" name="Object">techoCayendo</param>
+                    <param id="1" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="523078498133024">
+            <conditions>
+                <condition id="2" name="Key is down" sid="862074964682555" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="703730393147642" type="Asterix">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="491639717616936" type="Asterix">
+                    <param id="0" name="State">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="931161795887211" type="Asterix">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="397182866674293" type="Particles">
+                    <param id="0" name="Angle">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="794161715143909">
+            <conditions>
+                <condition id="2" name="Key is down" sid="738040053740145" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="749269325096602" type="Asterix">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="365449116618036" type="Asterix">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="898612975285099" type="Asterix">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="449183587104632" type="Particles">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="416535731705639">
+            <conditions>
+                <condition id="2" name="Key is down" sid="309633211536814" type="Keyboard">
+                    <param id="0" name="Key">87</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="306068581062553" type="Asterix">
+                    <param id="0" name="Control">2</param>
+                </action>
+                <action id="4" name="Set animation" sid="872703801720663" type="Asterix">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="259989564573491">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="874189173782478" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="177267504218941" type="Camera">
+                    <param id="0" name="X">lerp(Self.X, Asterix.X, 0.09)</param>
+                    <param id="1" name="Y">lerp(Self.Y, Asterix.Y-150, 0.03)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="965670701131319">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="593901221687262" type="Asterix" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="611448009728255" type="Asterix">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="966800872858852">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="572753528272630" type="Asterix">
+                    <param id="0" name="Object">techoCayendo</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="127246828119693" type="Audio">
+                    <param id="0" name="Tag">&quot;music1&quot;</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="967571998972207" type="System">
+                    <param id="0" name="Layout">Layout 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="169313892139997">
+            <conditions>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="303277104522734" type="Sprite3" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="603046147218778" type="Sprite3">
+                    <param id="0" name="Control">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="670860850676259">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="856949419584082" type="Asterix">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="500215899511615" type="System">
+                    <param id="0" name="Variable">POTIONINGREDIENTS</param>
+                    <param id="1" name="Value">POTIONINGREDIENTS - 1</param>
+                </action>
+                <action id="0" name="Set text" sid="836745412513822" type="IngredientCount">
+                    <param id="0" name="Text">POTIONINGREDIENTS</param>
+                </action>
+                <action id="-28" name="Set effect parameter" sid="804803616652728" type="Asterix">
+                    <param id="0" name="Effect">&quot;Vibrance&quot;</param>
+                    <param id="1" name="Parameter index">0</param>
+                    <param id="2" name="Value">1000</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="995726894061372" type="Asterix">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+                <action id="-16" name="Wait" sid="749999763149958" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-27" name="Set effect enabled" sid="794436876600011" type="Asterix">
+                    <param id="0" name="Mode">0</param>
+                    <param id="1" name="Effect">&quot;Vibrance&quot;</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="744492157182595" type="Asterix">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="315382517780240">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="128884286372291" type="Asterix" />
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="540322336413231" type="System">
+                    <param id="0" name="Layout">Layout 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="167639426191687">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="132876518526627" type="Asterix">
+                    <param id="0" name="Object">ingredient</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="817979380725168" type="System">
+                    <param id="0" name="Variable">POTIONINGREDIENTS</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="723872916796000" type="IngredientCount">
+                    <param id="0" name="Text">POTIONINGREDIENTS</param>
+                </action>
+                <action id="4" name="Set animation" sid="261321926227509" type="ingredient">
+                    <param id="0" name="Animation">&quot;poof&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="802426461588652" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-9" name="Destroy" sid="391557890117701" type="ingredient" />
+            </actions>
+        </event-block>
+        <event-block sid="314344885800126">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="800152677412850" type="Asterix" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="915834412669385" type="Asterix">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="290737906474677">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="566643521469200" type="Asterix">
+                    <param id="0" name="Object">Sprite6</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Physics" id="21" name="Set immovable" sid="443280699323688" type="techoCayendo">
+                    <param id="0" name="Setting">1</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="114978626763179" type="techoCayendo">
+                    <param id="0" name="Gravity">0</param>
+                </action>
+                <action behavior="Platform" id="6" name="Set max fall speed" sid="171167232000828" type="techoCayendo">
+                    <param id="0" name="Max fall speed">0</param>
+                </action>
+                <action id="4" name="Set animation" sid="532248644743246" type="Sprite6">
+                    <param id="0" name="Animation">&quot;pushed&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="299279480456425" type="System">
+                    <param id="0" name="Seconds">5</param>
+                </action>
+                <action behavior="Physics" id="21" name="Set immovable" sid="928018174383098" type="techoCayendo">
+                    <param id="0" name="Setting">0</param>
+                </action>
+                <action behavior="Platform" id="5" name="Set gravity" sid="443332613097508" type="techoCayendo">
+                    <param id="0" name="Gravity">3</param>
+                </action>
+                <action behavior="Platform" id="6" name="Set max fall speed" sid="551742313263169" type="techoCayendo">
+                    <param id="0" name="Max fall speed">7</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="681428254079718">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="376273442125424" type="System">
+                    <param id="0" name="Variable">POTIONINGREDIENTS</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">-1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="970831280538193" type="System">
+                    <param id="0" name="Layout">Layout 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="793356147525708">
+            <conditions>
+                <condition id="1" name="Is overlapping another object" sid="492799391781866" type="Asterix">
+                    <param id="0" name="Object">Text2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="0" name="Set ignoring input" sid="654404552813799" type="Asterix">
+                    <param id="0" name="Input">1</param>
+                </action>
+                <action id="4" name="Set animation" sid="623878312834939" type="Asterix">
+                    <param id="0" name="Animation">&quot;Victory&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="6" name="Stop" sid="165154254740413" type="Audio">
+                    <param id="0" name="Tag">&quot;&quot;</param>
+                </action>
+                <action id="0" name="Play" sid="709153641564377" type="Audio">
+                    <param id="0" name="Audio file">asterix title</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="-15" name="Set visible" sid="674674124497779" type="Text2">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="299888894782721" type="System">
+                    <param id="0" name="Seconds">3</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="824717352355329" type="System">
+                    <param id="0" name="Layout">Layout 5</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="562037178683524">
+            <conditions>
+                <condition id="3" name="On key released" sid="696801385637120" type="Keyboard">
+                    <param id="0" name="Key">69</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="125330844213292" type="Asterix">
+                    <param id="0" name="Animation">&quot;Punch&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="378203768111555" type="Asterix">
+                    <param id="0" name="Object">Particles</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-29" name="Move to object" sid="971491726360447" type="Particles">
+                    <param id="0" name="Where">0</param>
+                    <param id="1" name="Object">Asterix</param>
+                </action>
+                <action id="-16" name="Wait" sid="959810267311162" type="System">
+                    <param id="0" name="Seconds">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="951308929559648" type="Particles" />
+            </actions>
+        </event-block>
+        <event-block sid="674113672685928">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="166568203685174" type="Sprite3">
+                    <param id="0" name="Object">Particles</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="282069989014091" type="Sprite3" />
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
